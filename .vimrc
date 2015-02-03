@@ -14,8 +14,8 @@ Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle "garbas/vim-snipmate"
 Bundle "honza/vim-snippets"
-Bundle "scrooloose/snipmate-snippets"
-Bundle 'scrooloose/nerdtree'
+"Bundle "scrooloose/snipmate-snippets"
+"Bundle 'scrooloose/nerdtree'
 Bundle 'ap/vim-css-color'
 
 call vundle#end()
