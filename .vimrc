@@ -44,7 +44,7 @@ autocmd filetype python nmap <Leader>g :!python "%"<cr>
 autocmd filetype js nmap <Leader>g :!node "%"<cr>
 autocmd filetype elixir nmap <Leader>g :!elixir "%"<cr>
 autocmd filetype html nmap <Leader>g :!firefox "%"<cr>
-autocmd filetype java nmap <Leader>g :!javac "%" && java "%"<cr>
+autocmd filetype java nmap <Leader>g :!javac "%" <cr>
 
 set ruler
 set showmode
