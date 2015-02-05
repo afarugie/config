@@ -1,0 +1,40 @@
+# borrowed from https://github.com/napcs/ √
+# this is the default .slate file.
+# If no ~/.slate file exists this is the file that will be used.
+
+config defaultToCurrentScreen true
+config nudgePercentOf screenSize
+config resizePercentOf screenSize
+
+bind m:alt;shift move screenOriginX;screenOriginY screenSizeX;screenSizeY
+
+# Push Bindings
+bind k:alt;shift push up    bar-resize:screenSizeY/2
+bind j:alt;shift push down  bar-resize:screenSizeY/2
+bind l:alt;shift push right bar-resize:screenSizeX/2
+bind h:alt;shift push left  bar-resize:screenSizeX/2
+
+bind h:alt,ctrl corner top-left resize:screenSizeX/2;screenSizeY/2
+bind k:alt,ctrl corner top-right resize:screenSizeX/2;screenSizeY/2
+bind j:alt,ctrl corner bottom-left resize:screenSizeX/2;screenSizeY/2
+bind l:alt,ctrl corner bottom-right resize:screenSizeX/2;screenSizeY/2
+
+# Shows app icons and background apps, spreads icons in the same place.
+config windowHintsShowIcons true
+config windowHintsIgnoreHiddenWindows false
+config windowHintsSpread true
+
+#window hints
+bind e:cmd hint ASDFGHJKLQWERTYUIOPCVBN # use whatever keys you want
+
+# Grid
+bind g:cmd grid padding:5 0:6,4 1:8,3
+
+# Bindings
+bind l:alt focus 'iTerm'
+bind h:alt focus 'Firefox'
+
+layout myLayout 'iTerm' push right bar-resize:screenSizeX/2 | push left bar-resize:screenSizeX/2
+layout myLayout 'Firefox' push left bar-resize:screenSizeX/2 | push right bar-resize:screenSizeX/2
+
+bind i:alt;shift layout myLayout
