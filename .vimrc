@@ -15,8 +15,10 @@ Bundle "tomtom/tlib_vim"
 Bundle "garbas/vim-snipmate"
 Bundle "honza/vim-snippets"
 "Bundle "scrooloose/snipmate-snippets"
-"Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/nerdtree'
 Bundle 'ap/vim-css-color'
+Bundle 'https://github.com/scrooloose/nerdcommenter.git'
+Bundle 'https://github.com/tpope/vim-dispatch.git'
 
 call vundle#end()
 
@@ -44,7 +46,9 @@ autocmd filetype python nmap <Leader>g :!python "%"<cr>
 autocmd filetype js nmap <Leader>g :!node "%"<cr>
 autocmd filetype elixir nmap <Leader>g :!elixir "%"<cr>
 autocmd filetype html nmap <Leader>g :!firefox "%"<cr>
-autocmd filetype java nmap <Leader>g :!javac "%" <cr>
+autocmd filetype java nmap <Leader>g :!javac "%" && java "%:r"<cr>
+autocmd filetype cpp  nmap <Leader>g :!g++ "%" -o "%:r" && ./"%:r"<cr>
+autocmd filetype c nmap <Leader>g :!gcc "%" -o "%:r" && ./"%:r"<cr>
 
 set ruler
 set showmode
