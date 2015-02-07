@@ -6,6 +6,12 @@ config defaultToCurrentScreen true
 config nudgePercentOf screenSize
 config resizePercentOf screenSize
 
+
+# Resize Bindings
+bind l:shift,ctrl,alt           resize +10% +0
+bind h:shift,ctrl,alt           resize -10% +0
+bind k:shift,ctrl,alt           resize +0   -10%
+bind j:shift,ctrl,alt           resize +0   +10%
 bind m:alt;shift move screenOriginX;screenOriginY screenSizeX;screenSizeY
 
 # Push Bindings
@@ -32,6 +38,7 @@ bind g:cmd grid padding:5 0:6,4 1:8,3
 
 # Bindings
 bind l:alt focus 'iTerm'
+#bind h:alt focus 'Firefox'
 bind h:alt focus 'Safari'
 
 layout myLayout 'iTerm' push right bar-resize:screenSizeX/2 | push left bar-resize:screenSizeX/2
