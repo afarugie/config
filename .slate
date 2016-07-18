@@ -1,7 +1,3 @@
-# borrowed from https://github.com/napcs/ √
-# this is the default .slate file.
-# If no ~/.slate file exists this is the file that will be used.
-
 config defaultToCurrentScreen true
 config nudgePercentOf screenSize
 config resizePercentOf screenSize
@@ -37,11 +33,10 @@ bind e:cmd hint ASDFGHJKLQWERTYUIOPCVBN # use whatever keys you want
 bind g:cmd grid padding:5 0:6,4 1:8,3
 
 # Bindings
-bind l:alt focus 'iTerm'
-#bind h:alt focus 'Firefox'
-bind h:alt focus 'Safari'
+bind l:alt focus 'iTerm2'
+bind h:alt focus 'Firefox'
 
-layout myLayout 'iTerm' push right bar-resize:screenSizeX/2 | push left bar-resize:screenSizeX/2
-layout myLayout 'Safari' push left bar-resize:screenSizeX/2 | push right bar-resize:screenSizeX/2
+layout myLayout 'iTerm2' push right bar-resize:screenSizeX/2 | push left bar-resize:screenSizeX/2
+layout myLayout 'Firefox' push left bar-resize:screenSizeX/2 | push right bar-resize:screenSizeX/2
 
 bind i:alt;shift layout myLayout
