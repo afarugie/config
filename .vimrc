@@ -2,8 +2,6 @@ set nocompatible
 filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
-"set rtp+=~/.fzf
-"set runtimepath^=~/.vim/bundle/ctrlp.vim
 call vundle#begin()
 
 Bundle 'gmarik/Vundle.vim'
@@ -14,11 +12,11 @@ Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle "garbas/vim-snipmate"
 Bundle "honza/vim-snippets"
-"Bundle "scrooloose/snipmate-snippets"
 Bundle 'scrooloose/nerdtree'
 Bundle 'ap/vim-css-color'
 Bundle 'https://github.com/scrooloose/nerdcommenter.git'
 Bundle 'https://github.com/tpope/vim-dispatch.git'
+Bundle 'kchmck/vim-coffee-script'
 
 call vundle#end()
 
@@ -30,22 +28,15 @@ map <Leader>r :source $MYVIMRC<CR>
 imap jj <ESC>:w<CR>
 imap ii <ESC><CR>
 
-"Open NerdTree automatically if no files specified
-"autocmd StdinReadPre * let s:std_in=1
-"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-"Closes NerdTree when vim window closes
-"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
-"open NERDTree with ctrl + n
-"map <C-n> :NERDTreeToggle<CR>
-map <C-n> :E<CR>
+map <C-n> :NERDTreeToggle<CR>
 
 "Launch Configs
 autocmd filetype ruby nmap <Leader>g :!ruby "%"<cr>
 autocmd filetype python nmap <Leader>g :!python "%"<cr>
 autocmd filetype js nmap <Leader>g :!node "%"<cr>
+autocmd filetype coffee nmap <Leader>g :!coffee -c "%"<cr>
 autocmd filetype elixir nmap <Leader>g :!elixir "%"<cr>
-autocmd filetype html nmap <Leader>g :!firefox "%"<cr>
+autocmd filetype html nmap <Leader>g :!open "%"<cr><cr>
 autocmd filetype java nmap <Leader>g :!javac "%" && java "%:r"<cr>
 autocmd filetype cpp  nmap <Leader>g :!g++ "%" -o "%:r" && ./"%:r"<cr>
 autocmd filetype c nmap <Leader>g :!gcc "%" -o "%:r" && ./"%:r"<cr>
@@ -65,4 +56,3 @@ set cursorcolumn
 set cursorline
 set colorcolumn=80
 set clipboard=unnamed
-
